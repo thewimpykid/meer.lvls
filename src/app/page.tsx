@@ -32,8 +32,9 @@ export default function Home() {
   const [strikeRange, setStrikeRange] = useState(15);
 
   useEffect(() => {
-    fetch("/api/conversion-rates").then((r) => r.json()).then(setRates);
-    fetch("/api/dates").then((r) => r.json()).then((ds: string[]) => {
+    fetch("/api/conversion-rates").then((r) => r.json()).then((d) => { if (Array.isArray(d)) setRates(d); });
+    fetch("/api/dates").then((r) => r.json()).then((ds) => {
+      if (!Array.isArray(ds)) return;
       setDates(ds);
       if (ds.length > 0) setSelectedDate(ds[ds.length - 1]);
     });
