@@ -12,7 +12,7 @@ export async function GET(req: Request) {
     const db = getDb();
     const rows = db.prepare(
       "SELECT date, nq_close, qqq_close, ratio FROM conversion_rates WHERE date >= ? AND date <= ? ORDER BY date"
-    ).all(from, to) as ConversionRate[];
+    ).all(from, to) as unknown as ConversionRate[];
     return NextResponse.json(rows);
   } catch (e) {
     return NextResponse.json({ error: String(e) }, { status: 500 });

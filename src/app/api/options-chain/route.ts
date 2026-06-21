@@ -65,7 +65,7 @@ export async function GET(req: Request) {
            ${sideFilter}
          ORDER BY side, strike ASC`
       )
-      .all(date, minDte, maxDte, lo, hi) as RawOption[];
+      .all(date, minDte, maxDte, lo, hi) as unknown as RawOption[];
 
     const { ratio } = rate;
     const enriched = rows.map((r) => ({

@@ -274,7 +274,7 @@ export async function GET(req: Request) {
     const confidence = scores.map(s => Math.round((s / maxScore) * 100));
 
     // ── Centroid zone prediction ──────────────────────────────────────────────
-    const zones = predictZones(K_arr, scores);
+    const zones = predictZones(K_arr, scores, 12, 2.0, 6);
 
     // ── Bias per strike (call-dominant above spot = resistance) ───────────────
     const strikes: StrikeScore[] = near.map((r, i) => {
