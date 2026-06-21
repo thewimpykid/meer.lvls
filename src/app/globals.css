@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: #0f1117;
+  color: #e5e7eb;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0f1117; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+
+/* table hover */
+.options-table tbody tr:hover td { background: #1e2535; }
+
+/* recharts tooltip */
+.recharts-default-tooltip {
+  background: #161b27 !important;
+  border: 1px solid #1e2535 !important;
+  border-radius: 6px !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important;
+}

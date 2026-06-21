@@ -1,0 +1,12 @@
+node_modules/
+.next/
+*.csv
+*.db
+*.parquet
+*.sqlite
+.env
+.env.local
+.env*.local
+tsconfig.tsbuildinfo
+dist/
+out/
